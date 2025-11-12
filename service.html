@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公共服务 - 高楼杨梅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#8BC34A',
+                        accent: '#FF9800',
+                        neutral: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            .faq-answer.active {
+                max-height: 500px;
+            }
+            .rotate-icon {
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa fa-leaf text-primary text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">高楼杨梅</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors">首页</a>
+                    <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产地体验</a>
+                    <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                    <a href="cooperation.html" class="text-gray-700 hover:text-primary py-2 transition-colors">合作加盟</a>
+                    <a href="service.html" class="text-primary font-medium py-2 border-b-2 border-primary">公共服务</a>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-gray-700 focus:outline-none" id="menuBtn">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white shadow-md absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-gray-700 hover:text-primary py-2 transition-colors">合作加盟</a>
+                <a href="service.html" class="text-primary font-medium py-2">公共服务</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区 -->
+        <section class="bg-primary/10 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-gray-800 mb-4">公共服务</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">为您提供全方位的服务支持，解答关于高楼杨梅的各类问题</p>
+            </div>
+        </section>
+        
+        <!-- 服务入口 -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 服务1 -->
+                    <a href="#faq" class="block">
+                        <div class="bg-neutral rounded-lg p-6 text-center card-hover h-full">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <i class="fa fa-question-circle text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">常见问题</h3>
+                            <p class="text-gray-600">
+                                解答关于产品特性、购买流程、物流配送等常见问题
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <!-- 服务2 -->
+                    <a href="#traceability" class="block">
+                        <div class="bg-neutral rounded-lg p-6 text-center card-hover h-full">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <i class="fa fa-barcode text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">溯源查询</h3>
+                            <p class="text-gray-600">
+                                输入产品溯源码，查询种植、检测、流通全流程信息
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <!-- 服务3 -->
+                    <a href="#tools" class="block">
+                        <div class="bg-neutral rounded-lg p-6 text-center card-hover h-full">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <i class="fa fa-wrench text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">便民工具</h3>
+                            <p class="text-gray-600">
+                                提供成熟度查询、天气预告、采摘预约等实用工具
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <!-- 服务4 -->
+                    <a href="#contact" class="block">
+                        <div class="bg-neutral rounded-lg p-6 text-center card-hover h-full">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <i class="fa fa-phone text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">联系我们</h3>
+                            <p class="text-gray-600">
+                                品牌运营中心联系方式及反馈渠道
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 常见问题 -->
+        <section id="faq" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">常见问题</h2>
+                    <p class="text-gray-600">解答您关于高楼杨梅的疑惑</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- 问题1 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">高楼杨梅的成熟季节是什么时候？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                高楼杨梅的成熟季节一般在每年的6月中旬至7月上旬，具体时间会因当年气候条件略有差异。其中东魁杨梅成熟期在6月中下旬，早熟品种在6月上中旬即可上市，晚熟品种可延续至7月初。我们会在官网和微信公众号及时发布当年的准确成熟时间和采摘信息。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 问题2 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">如何辨别正宗的高楼杨梅？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                辨别正宗高楼杨梅可通过以下方式：1. 查看包装上是否有"高楼杨梅"国家地理标志保护产品标识；2. 扫描产品包装上的溯源二维码，可查询产地、种植户、检测报告等信息；3. 正宗高楼杨梅具有果形端正、色泽紫红或深红、果肉饱满、酸甜适中的特点；4. 通过官方授权渠道购买，避免从非正规渠道购买。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 问题3 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">杨梅的保鲜期有多久？如何保存？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                新鲜杨梅的保鲜期较短，常温下可保存1-2天，冷藏（0-4℃）可保存3-5天。保存方法：1. 收到杨梅后尽快开箱通风；2. 去除坏果，用清水轻轻冲洗后沥干水分；3. 放入透气的保鲜盒中，置于冰箱冷藏室；4. 食用前取出回温10分钟，口感更佳；5. 如需长期保存，可洗净沥干后冷冻，保质期可达3个月。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 问题4 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">购买后如何申请退换货？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                我们支持7天无理由退换货（需保持产品原包装未拆封且不影响二次销售）。如收到的产品存在质量问题（如严重损坏、腐烂超过10%等），请在签收后24小时内联系客服并提供照片凭证，我们将为您安排补发或全额退款。申请方式：1. 线上商城购买的订单，可在订单中心申请售后；2. 线下购买的产品，可携带购买凭证到原购买点办理；3. 直接拨打客服热线0577-12345678申请。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 问题5 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">如何预约杨梅采摘？需要注意什么？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                杨梅采摘预约可通过以下方式：1. 官网"便民工具"中的"采摘预约"系统；2. 微信公众号预约入口；3. 拨打各采摘园预约电话。采摘注意事项：1. 采摘季节天气炎热，请做好防晒防暑准备；2. 穿着舒适的运动鞋和深色衣物，避免穿浅色衣物；3. 园区提供采摘篮，请勿自带容器；4. 采摘时应轻拿轻放，避免损伤果实；5. 按指定区域采摘，不随意攀折树枝；6. 儿童需由成人陪同，注意安全；7. 采摘的果实按实际重量计费。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 问题6 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-gray-800">杨梅的物流配送范围和时效是怎样的？</span>
+                            <i class="fa fa-chevron-down text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">
+                                我们的物流配送范围覆盖全国大部分地区（偏远地区除外）。配送时效：1. 浙江省内及周边省市（上海、江苏、福建等）采用次日达服务；2. 其他省份主要城市采用2-3天送达；3. 偏远地区3-5天送达。所有杨梅产品均采用专业冷链包装，内含冰袋保鲜，确保产品新鲜度。夏季高温时段，部分偏远地区可能暂停配送，具体请咨询客服。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 text-center">
+                    <p class="text-gray-600 mb-4">还有其他问题？</p>
+                    <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors">
+                        联系客服咨询
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 溯源查询 -->
+        <section id="traceability" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">产品溯源查询</h2>
+                    <p class="text-gray-600">扫描产品包装上的溯源码或输入溯源编号，查询产品全流程信息</p>
+                </div>
+                
+                <div class="bg-neutral rounded-xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">输入溯源码查询</h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <label for="traceCode" class="block text-gray-700 mb-2">溯源编码</label>
+                                    <input type="text" id="traceCode" placeholder="请输入16位产品溯源码" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                                </div>
+                                <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors">
+                                    立即查询
+                                </button>
+                            </form>
+                            <p class="text-sm text-gray-500 mt-4">
+                                溯源码位于产品包装正面，由数字和字母组成的16位编码
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">扫码查询</h3>
+                            <div class="bg-white p-4 inline-block rounded-md mb-4">
+                                <div class="w-48 h-48 bg-gray-200 mx-auto flex items-center justify-center">
+                                    <i class="fa fa-qrcode text-5xl text-gray-400"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                使用微信或浏览器扫描产品包装上的二维码
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 溯源结果示例（默认隐藏） -->
+                    <div class="mt-8 hidden" id="traceResult">
+                        <div class="border-t border-gray-200 pt-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">溯源信息</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">产品名称</p>
+                                    <p class="font-medium text-gray-800">高楼东魁杨梅（特级）</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">采摘日期</p>
+                                    <p class="font-medium text-gray-800">2023年6月15日</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">种植基地</p>
+                                    <p class="font-medium text-gray-800">高楼镇杨梅示范园A区</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">种植户</p>
+                                    <p class="font-medium text-gray-800">张明（证书编号：GL2023058）</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">检测报告</p>
+                                    <p class="font-medium text-gray-800">合格（报告编号：JC20231256）</p>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">包装日期</p>
+                                    <p class="font-medium text-gray-800">2023年6月16日</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500 mb-1">农事记录摘要</p>
+                                <p class="text-gray-700 text-sm">
+                                    2023年3月10日：疏花处理<br>
+                                    2023年4月15日：疏果处理<br>
+                                    2023年5月20日：病虫害绿色防控<br>
+                                    2023年6月10日：成熟度检测
+                                </p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors text-sm">
+                                    查看完整检测报告 <i class="fa fa-external-link ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 便民工具 -->
+        <section id="tools" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">便民工具</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">提供实用工具，方便您了解和体验高楼杨梅</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 工具1 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-calendar text-primary text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">成熟度查询</h3>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6">
+                                查询当年杨梅成熟度情况及最佳采摘时间
+                            </p>
+                            
+                            <div class="bg-neutral p-4 rounded-md mb-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-700">东魁杨梅</span>
+                                    <span class="text-primary font-medium">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">预计6月20日达到最佳采摘状态</p>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                查看详细报告 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具2 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-sun-o text-primary text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">产区天气</h3>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6">
+                                高楼镇未来7天天气预报，方便安排采摘行程
+                            </p>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">今天</span>
+                                    <span class="text-gray-700"><i class="fa fa-sun-o text-accent mr-1"></i> 28℃</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">明天</span>
+                                    <span class="text-gray-700"><i class="fa fa-cloud mr-1"></i> 26℃</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">后天</span>
+                                    <span class="text-gray-700"><i class="fa fa-sun-o text-accent mr-1"></i> 30℃</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                查看完整预报 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具3 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-calendar-check-o text-primary text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">采摘预约</h3>
+                                </div>
+                                
+                                <p class="text-gray-600 mb-6">
+                                    提前预约杨梅采摘时段，避免高峰期等待
+                                </p>
+                                
+                                <form class="space-y-3 mb-6">
+                                    <div>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                                            <option>选择采摘园</option>
+                                            <option>高楼镇示范园A区</option>
+                                            <option>高楼镇示范园B区</option>
+                                            <option>杨梅谷采摘园</option>
+                                            <option>青山湖采摘基地</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                                    </div>
+                                </form>
+                                
+                                <a href="#" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                    立即预约 <i class="fa fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 联系我们 -->
+            <section id="contact" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">联系我们</h2>
+                            <p class="text-gray-600 mb-8">如有任何疑问或建议，欢迎通过以下方式与我们联系</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa fa-map-marker text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">办公地址</h3>
+                                        <p class="text-gray-600">浙江省温州市高楼镇杨梅产业园区管理中心</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa fa-phone text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">联系电话</h3>
+                                        <p class="text-gray-600">客服热线：0577-12345678（工作日 8:30-17:30）</p>
+                                        <p class="text-gray-600">合作咨询：0577-12345679（工作日 9:00-16:30）</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa fa-envelope text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">电子邮箱</h3>
+                                        <p class="text-gray-600">客服邮箱：service@gaolouyangmei.com</p>
+                                        <p class="text-gray-600">合作邮箱：cooperation@gaolouyangmei.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa fa-weixin text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">微信公众号</h3>
+                                        <p class="text-gray-600">搜索"高楼杨梅"或扫描下方二维码关注</p>
+                                        <div class="mt-3 bg-white p-2 inline-block rounded-md border border-gray-200">
+                                            <div class="w-32 h-32 bg-gray-200"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-neutral rounded-xl p-8">
+                                <h3 class="text-xl font-semibold mb-6 text-gray-800">在线留言</h3>
+                                
+                                <form class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="contactName" class="block text-gray-700 mb-2">您的姓名 *</label>
+                                            <input type="text" id="contactName" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="contactPhone" class="block text-gray-700 mb-2">联系电话 *</label>
+                                            <input type="tel" id="contactPhone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="contactEmail" class="block text-gray-700 mb-2">电子邮箱</label>
+                                        <input type="email" id="contactEmail" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="contactType" class="block text-gray-700 mb-2">留言类型 *</label>
+                                        <select id="contactType" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                                            <option value="">请选择留言类型</option>
+                                            <option value="product">产品咨询</option>
+                                            <option value="purchase">购买咨询</option>
+                                            <option value="pick">采摘咨询</option>
+                                            <option value="cooperation">合作咨询</option>
+                                            <option value="complaint">投诉建议</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // 移动端菜单切换
+            document.getElementById('menuBtn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 常见问题展开/折叠功能
+            document.addEventListener('DOMContentLoaded', function() {
+                // 获取所有问题按钮
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                
+                // 为每个问题按钮添加点击事件
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', function() {
+                        // 获取对应的回答元素
+                        const answer = this.nextElementSibling;
+                        // 获取箭头图标
+                        const icon = this.querySelector('i');
+                        
+                        // 切换回答的显示状态
+                        answer.classList.toggle('active');
+                        // 切换箭头图标的旋转状态
+                        icon.classList.toggle('rotate-icon');
+                    });
+                });
+            });
+        </script>
+</body>
+</html>

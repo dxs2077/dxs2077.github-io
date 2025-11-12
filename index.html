@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高楼杨梅 - 区域特色农产品品牌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4D7C0F',     // 主色调：深绿色
+                        secondary: '#84CC16',   // 辅助色：浅绿色
+                        accent: '#F59E0B',      // 强调色：橙色
+                        neutral: '#F5F5F4',     // 背景色：浅灰
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-leaf text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-primary">高楼杨梅</span>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-primary font-medium">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-gray-700 hover:text-primary transition-colors">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-gray-700 hover:text-primary transition-colors">合作加盟</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary transition-colors">公共服务</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-gray-700 focus:outline-none" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="text-primary py-2 transition-colors">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-gray-700 hover:text-primary py-2 transition-colors">合作加盟</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary py-2 transition-colors">公共服务</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首页内容 -->
+        <section class="relative">
+            <!-- 首页轮播图 -->
+            <div class="h-[60vh] md:h-[80vh] bg-neutral relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/30 z-10"></div>
+                <!-- 预留轮播图位置 -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('');">
+                    <!-- 实际图片通过CSS background-image设置 -->
+                <img src="images/杨梅挂枝头.png" alt="高楼杨梅挂枝头" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="container mx-auto px-4 h-full flex items-center relative z-20">
+                    <div class="max-w-xl text-white">
+                        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-4">
+                            高楼杨梅<br>自然馈赠的美味
+                        </h1>
+                        <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 text-white/90">
+                            源自核心产区的地理标志产品，传承百年种植技艺，每一颗都是自然的恩赐
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="products.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors">
+                                了解产品
+                            </a>
+                            <a href="experience.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/40 px-6 py-3 rounded-md transition-colors">
+                                产地体验
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 区域品牌核心优势 -->
+            <div class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">高楼杨梅·核心优势</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">地理标志保护产品，依托独特自然环境与标准化种植，成就卓越品质</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 优势1 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-map-marker text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">黄金产区</h3>
+                            <p class="text-gray-600">
+                                位于北纬27°优质杨梅产区，独特的红壤、充足光照与适宜湿度，造就了杨梅的独特风味
+                            </p>
+                            <!-- 预留图片位置 -->
+                            <div class="mt-6 h-48 bg-gray-200 rounded-md overflow-hidden">
+                                <img src="images\地球.png" alt="黄金产区环境" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <!-- 优势2 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-certificate text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">品质认证</h3>
+                            <p class="text-gray-600">
+                                严格执行绿色种植标准，通过国家地理标志认证，每批次产品均经过严格质量检测
+                            </p>
+                            <!-- 预留图片位置 -->
+                            <div class="mt-6 h-48 bg-gray-200 rounded-md overflow-hidden">
+                            <img src="images\图标.png" alt="品质认证" class="w-full h-full object-cover ">
+                            </div>
+                        </div>
+                        
+                        <!-- 优势3 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-history text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">百年传承</h3>
+                            <p class="text-gray-600">
+                                传承300年种植技艺，结合现代科学管理，保留传统风味的同时提升果实品质
+                            </p>
+                            <!-- 预留图片位置 -->
+                            <div class="mt-6 h-48 bg-gray-200 rounded-md overflow-hidden">
+                                <img src="images\传承与管理.png" alt="百年种植历史" class="w-full h-full object-cover ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <!-- 产区荣誉模块 -->
+    <section>
+        <div class="py-16 bg-primary/5">
+            <div class="container mx-auto px-4">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-8 text-center">产区荣誉</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- 荣誉1：国家地理标志产品 -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center h-24">
+                        <div class="max-h-16 max-w-full w-full">
+                            <img src="images\ScreenShot_2025-11-11_215939_376.png" alt="国家地理标志产品" class="h-full w-full object-contain mx-auto">
+                        </div>
+                        <span class="text-gray-600 text-center mt-2 text-sm">国家地理标志产品</span>
+                    </div>
+                    
+                    <!-- 荣誉2：绿色食品认证 -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center h-24">
+                        <div class="max-h-16 max-w-full w-full">
+                            <img src="images\ScreenShot_2025-11-11_220353_412.png" alt="绿色食品认证" class="h-full w-full object-contain mx-auto">
+                        </div>
+                        <span class="text-gray-600 text-center mt-2 text-sm">绿色食品认证</span>
+                    </div>
+                    
+                    <!-- 荣誉3：省级特色农产品 -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center h-24">
+                        <div class="max-h-16 max-w-full w-full">
+                            <img src="images\浙江特色农产品.png" alt="省级特色农产品" class="h-full w-full object-contain mx-auto">
+                        </div>
+                        <span class="text-gray-600 text-center mt-2 text-sm">省级特色农产品</span>
+                    </div>
+                    
+                    <!-- 荣誉4：优质农产品金奖 -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center h-24">
+                        <div class="max-h-16 max-w-full w-full">
+                            <img src="images\奖状.png" alt="优质农产品金奖" class="h-full w-full object-contain mx-auto">
+                        </div>
+                        <span class="text-gray-600 text-center mt-2 text-sm">优质农产品金奖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-leaf text-secondary text-2xl"></i>
+                        <span class="text-xl font-bold">高楼杨梅</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        国家地理标志产品，源自浙南生态高地，传承百年种植技艺，每一颗都是自然的馈赠。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa抖音 text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="brand.html" class="text-gray-400 hover:text-white transition-colors">品牌概况</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">产品矩阵</a></li>
+                        <li><a href="experience.html" class="text-gray-400 hover:text-white transition-colors">产地体验</a></li>
+                        <li><a href="purchase.html" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white transition-colors">品牌动态</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">服务支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">采摘指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">物流说明</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">售后政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">溯源查询</a></li>
+                        <li><a href="service.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">联系方式</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 w-4 text-center"></i>
+                            <span>浙江省温州市高楼镇杨梅产业园区</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone mt-1 mr-3 w-4 text-center"></i>
+                            <span>0577-12345678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mt-1 mr-3 w-4 text-center"></i>
+                            <span>info@gaolouyangmei.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o mt-1 mr-3 w-4 text-center"></i>
+                            <span>周一至周五 8:30-17:30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2023 高楼杨梅区域公共品牌 版权所有 | 浙ICP备12345678号
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">网站地图</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">投诉建议</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

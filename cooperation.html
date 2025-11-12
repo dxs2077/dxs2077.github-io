@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合作加盟 - 高楼杨梅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#8BC34A',
+                        accent: '#FF9800',
+                        neutral: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa fa-leaf text-primary text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">高楼杨梅</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors">首页</a>
+                    <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产地体验</a>
+                    <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                    <a href="cooperation.html" class="text-primary font-medium py-2 border-b-2 border-primary">合作加盟</a>
+                    <a href="service.html" class="text-gray-700 hover:text-primary py-2 transition-colors">公共服务</a>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-gray-700 focus:outline-none" id="menuBtn">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white shadow-md absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-primary font-medium py-2">合作加盟</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary py-2 transition-colors">公共服务</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区 -->
+        <section class="bg-primary/10 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-gray-800 mb-4">合作加盟</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">携手高楼杨梅，共享区域品牌价值，共创产业发展新机遇</p>
+            </div>
+        </section>
+        
+        <!-- 合作优势 -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">加盟合作优势</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">依托国家地理标志品牌，共享资源，共赢发展</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 优势1 -->
+                    <div class="bg-neutral rounded-lg p-6 card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-shield text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">品牌背书支持</h3>
+                        <p class="text-gray-600">
+                            国家地理标志产品认证，区域公共品牌统一推广，提升市场认可度与产品溢价能力
+                        </p>
+                    </div>
+                    
+                    <!-- 优势2 -->
+                    <div class="bg-neutral rounded-lg p-6 card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-cubes text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">货源稳定保障</h3>
+                        <p class="text-gray-600">
+                            1.2万亩核心种植基地，年产量8000吨以上，完善的供应链体系确保货源稳定供应
+                        </p>
+                    </div>
+                    
+                    <!-- 优势3 -->
+                    <div class="bg-neutral rounded-lg p-6 card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-bullhorn text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">营销资源共享</h3>
+                        <p class="text-gray-600">
+                            统一的营销策划与推广活动，共享媒体资源与展会资源，降低市场推广成本
+                        </p>
+                    </div>
+                    
+                    <!-- 优势4 -->
+                    <div class="bg-neutral rounded-lg p-6 card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-handshake-o text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">政府政策扶持</h3>
+                        <p class="text-gray-600">
+                            享受地方政府产业扶持政策，包括资金补贴、技术培训、市场开拓等多方面支持
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 合作方向 -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">合作方向</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">多元化合作模式，满足不同合作伙伴需求</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- 合作方向1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row card-hover">
+                        <div class="md:w-1/3 bg-primary/5 flex items-center justify-center p-6">
+                            <i class="fa fa-shopping-basket text-primary text-5xl"></i>
+                        </div>
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">授权经销商加盟</h3>
+                            <p class="text-gray-600 mb-4">
+                                成为高楼杨梅授权经销商，在指定区域内销售高楼杨梅系列产品，享受区域保护政策与价格优惠，适合水果连锁店、商超、农产品专卖店等渠道。
+                            </p>
+                            <a href="#application" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                了解加盟详情 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 合作方向2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row card-hover">
+                        <div class="md:w-1/3 bg-primary/5 flex items-center justify-center p-6">
+                            <i class="fa fa-laptop text-primary text-5xl"></i>
+                        </div>
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">电商平台合作</h3>
+                            <p class="text-gray-600 mb-4">
+                                与各大电商平台、社区团购平台、直播机构合作，拓展线上销售渠道，提供一件代发服务与专属营销方案，共享电商流量红利。
+                            </p>
+                            <a href="#application" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                洽谈平台合作 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 合作方向3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row card-hover">
+                        <div class="md:w-1/3 bg-primary/5 flex items-center justify-center p-6">
+                            <i class="fa fa-industry text-primary text-5xl"></i>
+                        </div>
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">深加工项目招商</h3>
+                            <p class="text-gray-600 mb-4">
+                                引进杨梅深加工企业，开发杨梅酒、杨梅酱、杨梅干等系列产品，延长产业链，提升附加值，享受产业园区优惠政策。
+                            </p>
+                            <a href="#application" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                查看招商方案 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 合作方向4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row card-hover">
+                        <div class="md:w-1/3 bg-primary/5 flex items-center justify-center p-6">
+                            <i class="fa fa-globe text-primary text-5xl"></i>
+                        </div>
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">文旅项目合作</h3>
+                            <p class="text-gray-600 mb-4">
+                                结合杨梅产业与乡村旅游，开发采摘体验、农事研学、民宿餐饮等项目，丰富产区旅游内涵，实现农旅融合发展。
+                            </p>
+                            <a href="#application" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center">
+                                探讨合作模式 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 加盟条件与流程 -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- 加盟条件 -->
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fa fa-list-alt text-primary mr-3"></i>加盟条件
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1">1</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">认同品牌理念</h3>
+                                    <p class="text-gray-600">认同高楼杨梅区域公共品牌理念，遵守品牌管理规定，维护品牌形象</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1">2</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">具备经营资质</h3>
+                                    <p class="text-gray-600">具备合法的经营资质与固定的经营场所，有相关行业经验者优先</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1">3</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">具备销售能力</h3>
+                                    <p class="text-gray-600">拥有一定的销售网络与客户资源，具备市场开拓能力与营销团队</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1">4</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">遵守合作协议</h3>
+                                    <p class="text-gray-600">遵守价格体系与区域保护政策，不销售假冒伪劣产品，维护市场秩序</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 mt-1">5</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 mb-1">满足资金要求</h3>
+                                    <p class="text-gray-600">具备相应的资金实力，能够满足合作所需的首批进货与市场投入</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 加盟流程 -->
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fa fa-sitemap text-primary mr-3"></i>加盟流程
+                        </h2>
+                        
+                        <div class="relative">
+                            <!-- 连接线 -->
+                            <div class="absolute left-4 top-8 bottom-8 w-0.5 bg-primary/20"></div>
+                            
+                            <div class="space-y-8 relative">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 z-10">1</div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">咨询与申请</h3>
+                                        <p class="text-gray-600">通过电话或在线表单提交加盟申请，初步了解合作详情</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 z-10">2</div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">资质审核</h3>
+                                        <p class="text-gray-600">提交相关资质文件，总部进行审核评估与实地考察</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 z-10">3</div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">洽谈签约</h3>
+                                        <p class="text-gray-600">双方洽谈合作细节，签订加盟合作协议，缴纳相关费用</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 z-10">4</div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">培训与筹备</h3>
+                                        <p class="text-gray-600">参加品牌运营培训，完成店面装修与设备配置，准备开业</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4 z-10">5</div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800 mb-1">正式运营</h3>
+                                        <p class="text-gray-600">按计划开业运营，总部提供持续的运营支持与市场指导</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 成功案例 -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">合作成功案例</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">携手合作伙伴，共创杨梅产业发展佳绩</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 案例1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="images\创建杨梅货架.png" alt="温州市区连锁超市合作案例" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800">温州市区连锁超市合作</h3>
+                            <p class="text-gray-600 mb-4">
+                                与温州市区10家连锁超市合作，建立专柜销售，旺季月销量突破5000公斤，成为超市水果区明星产品。
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="flex items-center"><i class="fa fa-calendar-check-o mr-2"></i> 合作时长：3年</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 案例2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="images\直播带货.png" alt="电商平台年度销售冠军" class="w-full h-full object-cover ">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800">电商平台年度销售冠军</h3>
+                            <p class="text-gray-600 mb-4">
+                                与某知名电商平台合作，通过直播带货与平台活动，单季销售额突破300万元，成为同类产品销量第一。
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="flex items-center"><i class="fa fa-calendar-check-o mr-2"></i> 合作时长：2年</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 案例3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover">
+                        <div class="h-48 overflow-hidden">
+                            <img src="images\杨梅深加工.png"、" alt="杨梅深加工合作项目" class="w-full h-full object-cover 、">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800">杨梅深加工合作项目</h3>
+                            <p class="text-gray-600 mb-4">
+                                与酒类企业合作开发的杨梅酒系列产品，年销售额达800万元，带动杨梅原料收购300吨。
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span class="flex items-center"><i class="fa fa-calendar-check-o mr-2"></i> 合作时长：5年</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 加盟申请 -->
+        <section id="application" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">加盟申请</h2>
+                    <p class="text-gray-600">填写以下信息，我们将尽快与您联系，洽谈合作详情</p>
+                </div>
+                
+                <form class="bg-neutral p-8 rounded-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">联系人姓名 *</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">联系电话 *</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">电子邮箱</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                        </div>
+                        
+                        <div>
+                            <label for="city" class="block text-gray-700 mb-2">所在城市 *</label>
+                            <input type="text" id="city" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="company" class="block text-gray-700 mb-2">公司/店铺名称 *</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="business" class="block text-gray-700 mb-2">主营业务 *</label>
+                            <input type="text" id="business" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required placeholder="例如：水果销售、超市零售、电商平台等">
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="cooperation" class="block text-gray-700 mb-2">意向合作类型 *</label>
+                            <select id="cooperation" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+                                <option value="">请选择合作类型</option>
+                                <option value="dealer">授权经销商加盟</option>
+                                <option value="ecommerce">电商平台合作</option>
+                                <option value="processing">深加工项目合作</option>
+                                <option value="tourism">文旅项目合作</option>
+                                <option value="other">其他合作</option>
+                            </select>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="description" class="block text-gray-700 mb-2">合作设想与需求描述</label>
+                            <textarea id="description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请简要描述您的合作设想、资源优势与需求"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <input type="checkbox" id="agreement" class="mt-1 mr-3" required>
+                        <label for="agreement" class="text-gray-700 text-sm">
+                            我已阅读并同意《高楼杨梅合作加盟协议》及《隐私政策》，允许高楼杨梅品牌运营中心与我联系相关合作事宜 *
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors text-lg font-medium">
+                        提交加盟申请
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-leaf text-secondary text-2xl"></i>
+                        <span class="text-xl font-bold">高楼杨梅</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        国家地理标志产品，源自浙南生态高地，传承百年种植技艺，每一颗都是自然的馈赠。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa抖音 text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="brand.html" class="text-gray-400 hover:text-white transition-colors">品牌概况</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">产品矩阵</a></li>
+                        <li><a href="experience.html" class="text-gray-400 hover:text-white transition-colors">产地体验</a></li>
+                        <li><a href="purchase.html" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white transition-colors">品牌动态</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">服务支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">采摘指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">物流说明</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">售后政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">溯源查询</a></li>
+                        <li><a href="service.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">联系方式</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 w-4 text-center"></i>
+                            <span>浙江省温州市高楼镇杨梅产业园区</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone mt-1 mr-3 w-4 text-center"></i>
+                            <span>0577-12345678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mt-1 mr-3 w-4 text-center"></i>
+                            <span>info@gaolouyangmei.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o mt-1 mr-3 w-4 text-center"></i>
+                            <span>周一至周五 8:30-17:30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2023 高楼杨梅区域公共品牌 版权所有 | 浙ICP备12345678号
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">网站地图</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

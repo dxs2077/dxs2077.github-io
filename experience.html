@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产地体验 - 高楼杨梅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4D7C0F',
+                        secondary: '#84CC16',
+                        accent: '#F59E0B',
+                        neutral: '#F5F5F4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-leaf text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-primary">高楼杨梅</span>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-primary font-medium">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-gray-700 hover:text-primary transition-colors">合作加盟</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary transition-colors">公共服务</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-gray-700 focus:outline-none" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors">首页</a>
+                <a href="brand.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌概况</a>
+                <a href="products.html" class="text-gray-700 hover:text-primary py-2 transition-colors">产品矩阵</a>
+                <a href="experience.html" class="text-primary py-2 transition-colors">产地体验</a>
+                <a href="purchase.html" class="text-gray-700 hover:text-primary py-2 transition-colors">购买渠道</a>
+                <a href="news.html" class="text-gray-700 hover:text-primary py-2 transition-colors">品牌动态</a>
+                <a href="cooperation.html" class="text-gray-700 hover:text-primary py-2 transition-colors">合作加盟</a>
+                <a href="service.html" class="text-gray-700 hover:text-primary py-2 transition-colors">公共服务</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 产地体验内容 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">产地体验</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">走进高楼杨梅产区，感受自然与农耕的魅力</p>
+                </div>
+                
+                <!-- 采摘体验 -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-semibold mb-8 text-primary flex items-center">
+                        <i class="fa fa-hand-paper-o mr-2"></i>杨梅采摘体验
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <!-- 左侧：图片 -->
+                        <div class="space-y-4">
+                            <!-- 预留图片位置1 -->
+                            <div class="h-80 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="images\游客杨梅园图片 (2).png" alt="杨梅采摘体验" class="w-full h-full object-cover ">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <!-- 预留图片位置2 -->
+                                <div class="h-40 bg-gray-200 rounded-lg overflow-hidden">
+                                    <img src="images\家庭采摘杨梅图片.png" alt="杨梅采摘体验" class="w-full h-full object-cover ">
+                                </div>
+                                <!-- 预留图片位置3 -->
+                                <div class="h-40 bg-gray-200 rounded-lg overflow-hidden">
+                                    <img src="images\情侣采摘杨梅图片 (1).png" alt="采摘成果" class="w-full h-full object-cover ">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 右侧：信息 -->
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">采摘季节与时间</h4>
+                                <p class="text-gray-700">
+                                    每年5月下旬至6月下旬为杨梅采摘季，每日开放时间为8:00-17:00。建议提前3天预约，避开周末高峰期。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">采摘费用与规则</h4>
+                                <ul class="text-gray-700 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>成人票：80元/人（含入园费，可免费品尝，带出按30元/斤计费）</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>儿童票：40元/人（1.2米以下，需成人陪同）</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>采摘时请使用园区提供的专用工具，爱护果树，避免浪费</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-semibold mb-3 text-gray-800">预约方式</h4>
+                                <div class="bg-neutral p-4 rounded-lg">
+                                    <p class="text-gray-700 mb-2">
+                                        <i class="fa fa-phone text-primary mr-2"></i> 电话预约：0577-12345678
+                                    </p>
+                                    <p class="text-gray-700 mb-2">
+                                        <i class="fa fa-weixin text-primary mr-2"></i> 微信预约：关注"高楼杨梅"公众号
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <i class="fa fa-calendar text-primary mr-2"></i> 在线预约：<a href="#" class="text-primary hover:underline">点击预约</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 旅游路线 -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-semibold mb-8 text-primary flex items-center">
+                        <i class="fa fa-map-signs mr-2"></i>推荐旅游路线
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- 路线1 -->
+                        <div class="bg-neutral rounded-lg overflow-hidden card-hover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold mb-4 text-gray-800">一日游路线</h4>
+                                <ul class="space-y-4 text-gray-700">
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                                        <div>
+                                            <span class="font-medium">09:00</span> 抵达高楼镇杨梅文化广场，参观杨梅文化馆
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                                        <div>
+                                            <span class="font-medium">10:00-12:00</span> 前往杨梅种植基地体验采摘
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                                        <div>
+                                            <span class="font-medium">12:30-14:00</span> 品尝当地特色农家菜
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                                        <div>
+                                            <span class="font-medium">14:30-16:00</span> 参观杨梅酒酿造工坊
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">5</span>
+                                        <div>
+                                            <span class="font-medium">16:30</span> 购买特色产品，返程
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-6">
+                                    <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors">
+                                        查看详情
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 路线2 -->
+                        <div class="bg-neutral rounded-lg overflow-hidden card-hover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold mb-4 text-gray-800">二日游路线</h4>
+                                <ul class="space-y-4 text-gray-700">
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">D1</span>
+                                        <div>
+                                            <span class="font-medium">第一天</span> 杨梅文化广场 → 采摘体验 → 农家晚餐 → 入住山间民宿
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">D2</span>
+                                        <div>
+                                            <span class="font-medium">第二天</span> 清晨登山观景 → 杨梅深加工体验 → 午餐 → 参观古村落 → 返程
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-6">
+                                    <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors">
+                                        查看详情
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 周边配套 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-primary flex items-center">
+                        <i class="fa fa-building-o mr-2"></i>周边配套服务
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 配套1 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-bed text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">特色住宿</h4>
+                            <p class="text-gray-700 mb-4">
+                                提供10余家特色民宿和农家乐，从经济实惠到高端度假应有尽有，可体验乡村生活。
+                            </p>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                查看住宿列表 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- 配套2 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-cutlery text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">特色餐饮</h4>
+                            <p class="text-gray-700 mb-4">
+                                当地农家乐提供杨梅宴、农家土菜等特色餐饮，使用新鲜本地食材，风味独特。
+                            </p>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                查看餐饮推荐 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- 配套3 -->
+                        <div class="bg-neutral rounded-lg p-6 card-hover">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-car text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">交通指南</h4>
+                            <p class="text-gray-700 mb-4">
+                                距离市区约40公里，可自驾或乘坐景区直通车，园区内提供免费停车场。
+                            </p>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                查看交通详情 <i class="fa fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-leaf text-secondary text-2xl"></i>
+                        <span class="text-xl font-bold">高楼杨梅</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        国家地理标志产品，源自浙南生态高地，传承百年种植技艺，每一颗都是自然的馈赠。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa抖音 text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="brand.html" class="text-gray-400 hover:text-white transition-colors">品牌概况</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">产品矩阵</a></li>
+                        <li><a href="experience.html" class="text-gray-400 hover:text-white transition-colors">产地体验</a></li>
+                        <li><a href="purchase.html" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white transition-colors">品牌动态</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">服务支持</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">采摘指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">物流说明</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">售后政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">溯源查询</a></li>
+                        <li><a href="service.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">联系方式</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 w-4 text-center"></i>
+                            <span>浙江省温州市高楼镇杨梅产业园区</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone mt-1 mr-3 w-4 text-center"></i>
+                            <span>0577-12345678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope mt-1 mr-3 w-4 text-center"></i>
+                            <span>info@gaolouyangmei.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o mt-1 mr-3 w-4 text-center"></i>
+                            <span>周一至周五 8:30-17:30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2023 高楼杨梅区域公共品牌 版权所有 | 浙ICP备12345678号
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">网站地图</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">投诉建议</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮及脚本 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
